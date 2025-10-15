@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "250952236727",
+    "project_id": "programgeniecomparison",
+    "storage_bucket": "programgeniecomparison.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250952236727:android:c18ad637a5a8e45ba05732",
+        "android_client_info": {
+          "package_name": "com.example.programgenieplugins"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9QthN2PiC373NlAcogfW_32ZOQoZBUqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
