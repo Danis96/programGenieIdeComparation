@@ -62,6 +62,25 @@ class ImagesListHelper {
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/prodart_empty_vscode.png?updatedAt=1760610237785',
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/prodart_401_vscode.png?updatedAt=1760610237784',
         ];
+      case 'Right Click Actions':
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/context_code_selection_vscode.png?updatedAt=1760622806154',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/context_after_option_press_vscode.png?updatedAt=1760622806596',
+        ];
+      case 'Artifacts Preview':
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.15.05.png?updatedAt=1760624639559',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.13.28.png?updatedAt=1760624639603',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.13.42.png?updatedAt=1760624639673',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.12.34.png?updatedAt=1760624639492',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.12.42.png?updatedAt=1760624639641',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.13.18.png?updatedAt=1760624639457',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.12.55.png?updatedAt=1760624639347',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.15.17.png?updatedAt=1760624639553',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/vscode_repo.png?updatedAt=1760625053863',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.14.57.png?updatedAt=1760624639142',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Screenshot%202025-10-16%20at%2016.15.28.png?updatedAt=1760624638026',
+        ];
       default:
         return [];
     }
@@ -91,7 +110,10 @@ class ImagesListHelper {
       case 'Chat Header':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/chat_header_intellij.png?updatedAt=1760551400304';
       case 'Chat Header History':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/chat_header_history_intellij.png?updatedAt=1760551401187';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/chat_header_history_intellij.png?updatedAt=1760551401187',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/history_selected_item_intellij.png?updatedAt=1760622181463',
+        ];
       case 'User Messages':
         return [
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/user_m_simple_intellij.png?updatedAt=1760601514812',
@@ -131,6 +153,26 @@ class ImagesListHelper {
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/prodart_search_intellij.png?updatedAt=1760610257941',
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/prodart_empty_intellij.png?updatedAt=1760610257940',
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/prodart_401_intellij.png?updatedAt=1760610257832',
+        ];
+      case 'Right Click Actions':
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/context_code_selected_intellij.png?updatedAt=1760622818308',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/context_file_intellij.png?updatedAt=1760622818406',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/context_after_option_press_intellij.png?updatedAt=1760622818452',
+        ];
+      case 'Artifacts Preview':
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/page_intellij.png?updatedAt=1760624379296',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/file_intellij.png?updatedAt=1760624379095',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/pr-brief_intellij.png?updatedAt=1760624379343',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/epic_intellij.png?updatedAt=1760624379325',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/apidoc_intellij.png?updatedAt=1760624379323',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/w_intellij.png?updatedAt=1760624379062',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/dbdoc_intellij.png?updatedAt=1760624379151',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/story_intellij.png?updatedAt=1760624379310',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/repo_intellij.png?updatedAt=1760625045823',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/subtask_intellij.png?updatedAt=1760624379063',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/attachment_intellij.png?updatedAt=1760624378613',
         ];
       default:
         return [];

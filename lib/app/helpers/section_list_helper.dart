@@ -12,5 +12,7 @@ class SectionListHelper {
     'Chat Input',
     'Chat Panel',
     'Product & Artifacts',
+    'Right Click Actions',
+    'Artifacts Preview',
   ];
 }
