@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:programgenieplugins/feedback/feedback_provider.dart';
-import 'package:programgenieplugins/feedback/feedback_service.dart';
-import 'package:programgenieplugins/helpers/differences_list_helper.dart';
-import 'package:programgenieplugins/helpers/images_list_helper.dart';
-import 'package:programgenieplugins/helpers/section_list_helper.dart';
+import 'package:programgenieplugins/app/feedback/feedback_provider.dart';
+import 'package:programgenieplugins/app/feedback/feedback_service.dart';
+import 'package:programgenieplugins/app/helpers/differences_list_helper.dart';
+import 'package:programgenieplugins/app/helpers/images_list_helper.dart';
+import 'package:programgenieplugins/app/helpers/section_list_helper.dart';
 import 'package:programgenieplugins/widgets/custom_image_slider.dart';
 import 'package:provider/provider.dart';
 
@@ -636,7 +636,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
                                           ],
                                         ),
                                       );
-                                    }).toList(),
+                                    }),
                                   ],
                                 ),
                               );

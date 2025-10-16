@@ -7,5 +7,10 @@ class SectionListHelper {
     'After PAT Added - Chat Opened',
     'Chat Header',
     'Chat Header History',
+    'User Messages',
+    'Assistant Messages',
+    'Chat Input',
+    'Chat Panel',
+    'Product & Artifacts',
   ];
 }

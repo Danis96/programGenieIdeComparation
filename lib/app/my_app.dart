@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:programgenieplugins/feedback/feedback_provider.dart';
-import 'package:programgenieplugins/view/comparison_view.dart';
+import 'package:programgenieplugins/app/feedback/feedback_provider.dart';
+import 'package:programgenieplugins/app/view/comparison_view.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
