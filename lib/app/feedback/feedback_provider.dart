@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:programgenieplugins/feedback/feedback_service.dart';
+import 'package:programgenieplugins/app/feedback/feedback_service.dart';
 
 class FeedbackProvider extends ChangeNotifier {
   final FeedbackService _feedbackService = FeedbackService();

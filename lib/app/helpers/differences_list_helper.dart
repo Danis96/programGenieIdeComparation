@@ -9,5 +9,10 @@ class DifferencesListHelper {
     'After PAT Added - Chat Opened': 'The after PAT added screen is not visible in VS Code and IntelliJ.',
     'Chat Header': 'The chat header is not visible in VS Code and IntelliJ.',
     'Chat Header History': 'The chat header history is not visible in VS Code and IntelliJ.',
+    'User Messages': 'The user messages are not visible in VS Code and IntelliJ.',
+    'Assistant Messages': 'The assistant messages are not visible in VS Code and IntelliJ.',
+    'Chat Input': 'The chat input is not visible in VS Code and IntelliJ.',
+    'Chat Panel': 'The chat panel is not visible in VS Code and IntelliJ.',
+    'Product & Artifacts': 'The product and artifacts are not visible in VS Code and IntelliJ.',
   };
 }
