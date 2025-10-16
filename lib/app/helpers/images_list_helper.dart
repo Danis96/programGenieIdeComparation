@@ -45,6 +45,7 @@ class ImagesListHelper {
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/chat_input_short_vscode.png?updatedAt=1760603229261',
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/chat_input_long_vscode.png?updatedAt=1760603229252',
           'https://ik.imagekit.io/9j9bfa4c7h/programGenie/chat_input_prodart_vscode.png?updatedAt=1760603229136',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/chat_input_long_chips_vscode.png?updatedAt=1760616499561',
         ];
       case 'Chat Panel':
         return [
