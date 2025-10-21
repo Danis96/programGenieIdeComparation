@@ -180,7 +180,35 @@ class ImagesListHelper {
   }
 
   dynamic getVisualStudioImagePath(String section) {
-    // All Visual Studio images are missing - needs screenshots
-    return [];
+    switch (section) {
+      case 'Extension/Plugin View':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Extension%20Plugin%20View_VISUAL_STUDIO.png?updatedAt=1761061061066';
+      case 'Toolbar Visibility':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Toolbar%20Visibility_VISUAL_STUDIO.png?updatedAt=1761061060974';
+      case 'After Installation Screen on Chat Open':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/After%20Installation%20Screen%20on%20Chat%20Open_VISUAL_STUDIO.png?updatedAt=1761061060983';
+      case 'Insert PAT and Base URL':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_VISUAL_STUDIO.png?updatedAt=1761061061110';
+      case 'After PAT Added - Chat Opened':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/After%20PAT%20Added%20-%20Chat%20Opened_VISUAL_STUDIO.png?updatedAt=1761061060883';
+      case 'Chat Header':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Header_VISUAL_STUDIO.png?updatedAt=1761061060947';
+      case 'Chat Header History':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Header%20History_VISUAL_STUDIO.png?updatedAt=1761061061077';
+      case 'User Messages':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/User%20Messages_VISUAL_STUDIO.png?updatedAt=1761061061040';
+      case 'Assistant Messages':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Assistant%20Messages_VISUAL_STUDIO.png?updatedAt=1761061061033';
+      case 'Chat Input':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Input_VISUAL_STUDIO.png?updatedAt=1761061060993';
+      case 'Chat Panel':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Panel_VISUAL_STUDIO.png?updatedAt=1761061061050';
+      case 'Product & Artifacts':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Product%20&%20Artifacts_VISUAL_STUDIO.png?updatedAt=1761061061088';
+      case 'Right Click Actions':
+        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Right%20Click%20Actions_VISUAL_STUDIO.png?updatedAt=1761061061161';
+      case 'Artifacts Preview':
+        return [];
+    }
   }
 }
