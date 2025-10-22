@@ -184,29 +184,72 @@ class ImagesListHelper {
       case 'Extension/Plugin View':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Extension%20Plugin%20View_VISUAL_STUDIO.png?updatedAt=1761061061066';
       case 'Toolbar Visibility':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Toolbar%20Visibility_VISUAL_STUDIO.png?updatedAt=1761061060974';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Toolbar%20Visibility_VISUAL_STUDIO.png?updatedAt=1761061060974',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Toolbar%20Visibility_2_VISUAL.png?updatedAt=1761159498481',
+        ];
       case 'After Installation Screen on Chat Open':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/After%20Installation%20Screen%20on%20Chat%20Open_VISUAL_STUDIO.png?updatedAt=1761061060983';
       case 'Insert PAT and Base URL':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_VISUAL_STUDIO.png?updatedAt=1761061061110';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_VISUAL_STUDIO.png?updatedAt=1761061061110',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_2_VISUAL.png?updatedAt=1761159147934',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_3VISUAL.png?updatedAt=1761159147876',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_4VISUAL.png?updatedAt=1761159147890',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_5VISUAL.png?updatedAt=1761159147827',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Insert%20PAT%20and%20Base%20URL_6VISUAL.png?updatedAt=1761159147892',
+        ];
       case 'After PAT Added - Chat Opened':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/After%20PAT%20Added%20-%20Chat%20Opened_VISUAL_STUDIO.png?updatedAt=1761061060883';
       case 'Chat Header':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Header_VISUAL_STUDIO.png?updatedAt=1761061060947';
       case 'Chat Header History':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Header%20History_VISUAL_STUDIO.png?updatedAt=1761061061077';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Header%20History_VISUAL_STUDIO.png?updatedAt=1761061061077',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Header%20History_2VISUALCODE.png?updatedAt=1761158676095',
+        ];
       case 'User Messages':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/User%20Messages_VISUAL_STUDIO.png?updatedAt=1761061061040';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/User%20Messages_VISUAL_STUDIO.png?updatedAt=1761061061040',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/User%20Messages_2_VISUAL.png?updatedAt=1761159602293',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/User%20Messages_3VISUAL.png?updatedAt=1761159602529',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/User%20Messages_4VISUAL.png?updatedAt=1761159602600',
+        ];
       case 'Assistant Messages':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Assistant%20Messages_VISUAL_STUDIO.png?updatedAt=1761061061033';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Assistant%20Messages_VISUAL_STUDIO.png?updatedAt=1761061061033',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Assistant%20Messages_2VISUALCODE.png?updatedAt=1761158567005',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Assistant%20Messages_3VISUALCODE.png?updatedAt=1761158567003',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Assistant%20Messages_4VISUALCODE.png?updatedAt=1761158567000',
+        ];
       case 'Chat Input':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Input_VISUAL_STUDIO.png?updatedAt=1761061060993';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Input_VISUAL_STUDIO.png?updatedAt=1761061060993',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Input_2VISUAL.png?updatedAt=1761158822695',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Input_3ISUAL.png?updatedAt=1761158822874',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Input_4ISUAL.png?updatedAt=1761158822953',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Input_5ISUAL.png?updatedAt=1761158822922',
+        ];
       case 'Chat Panel':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Panel_VISUAL_STUDIO.png?updatedAt=1761061061050';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Panel_VISUAL_STUDIO.png?updatedAt=1761061061050',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Panel_2VISUAL.png?updatedAt=1761158936781',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Panel_3ISUAL.png?updatedAt=1761158936695',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Chat%20Panel_4ISUAL.png?updatedAt=1761158936695',
+        ];
       case 'Product & Artifacts':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Product%20&%20Artifacts_VISUAL_STUDIO.png?updatedAt=1761061061088';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Product%20&%20Artifacts_VISUAL_STUDIO.png?updatedAt=1761061061088',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Product%20&%20Artifacts_2VISUAL.png?updatedAt=1761159275888',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Product%20&%20Artifacts_3VISUAL.png?updatedAt=1761159275933',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Product%20&%20Artifacts_4VISUAL.png?updatedAt=1761159276159',
+        ];
       case 'Right Click Actions':
-        return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Right%20Click%20Actions_VISUAL_STUDIO.png?updatedAt=1761061061161';
+        return [
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Right%20Click%20Actions_VISUAL_STUDIO.png?updatedAt=1761061061161',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Right%20Click%20Actions_2VISUAL.png?updatedAt=1761159390822',
+          'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Right%20Click%20Actions_3VISUAL.png?updatedAt=1761159390885',
+        ];
       case 'Artifacts Preview':
         return [];
     }
