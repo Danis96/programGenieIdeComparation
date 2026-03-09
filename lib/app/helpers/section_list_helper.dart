@@ -1,5 +1,5 @@
 class SectionListHelper {
-  static final List<String> sections = [
+  static final List<String> v1Sections = [
     'Extension/Plugin View',
     'Toolbar Visibility',
     'After Installation Screen on Chat Open',
@@ -15,4 +15,24 @@ class SectionListHelper {
     'Right Click Actions',
     'Artifacts Preview',
   ];
+
+  static final List<String> v2Sections = [
+    'Genie Rules',
+    'Session Rename',
+    'Search history sessions',
+    'Welcome message - empty state',
+    'Session filter tags',
+    'Error console action',
+    'Run terminal action',
+    'Reasoning Effort and Content',
+    'Genie Web Search',
+    'Genie Vision',
+  ];
+
+  static List<String> forVersion(int version) {
+    if (version == 2) {
+      return v2Sections;
+    }
+    return v1Sections;
+  }
 }

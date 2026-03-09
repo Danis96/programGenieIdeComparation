@@ -1,5 +1,74 @@
 class ImagesListHelper {
-  dynamic getVSCodeImagePath(String section) {
+  final Map<String, Map<String, dynamic>> version2ImagesByIde = {
+    'vscode': {},
+    'intellij': {
+      'Genie Rules': [
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/ai_rules/ai_rulesPRVI.png?updatedAt=1773049552631',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/ai_rules/ai_rulesDRUGI.png?updatedAt=1773049577779',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/ai_rules/ai_rulesTRECI.png?updatedAt=1773049604409',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/ai_rules/ai_rulesCETVRTI.png?updatedAt=1773049619187',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/ai_rules/ai_rulesPETI.png?updatedAt=1773049649160',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/ai_rules/ai_rulesSESTI.png?updatedAt=1773049660872',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/ai_rules/ai_rules7.png?updatedAt=1773049681444',
+      ],
+      'Session Rename': [
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/rename_session/rnsPRVI.png?updatedAt=1773050113620',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/rename_session/rnsDRUGI.png?updatedAt=1773050178832',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/rename_session/rns3.png?updatedAt=1773050195752',
+      ],
+      'Search history sessions': [
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/search_history/sh1.png?updatedAt=1773049426596',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/search_history/sh2.png?updatedAt=1773049426707',
+      ],
+      'Welcome message - empty state':[
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/welcome_message/wm1.png?updatedAt=1773049425867',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/welcome_message/wm2.png?updatedAt=1773049426203',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/welcome_message/wm3.png?updatedAt=1773049425512',
+      ],
+      'Session filter tags': [
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/filter_tags/ft3.png?updatedAt=1773049426338',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/filter_tags/ft1.png?updatedAt=1773049426151',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/filter_tags/ft2.png?updatedAt=1773049425905',
+      ],
+      'Error console action': [
+'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/error_console/ec1.png?updatedAt=1773049426759',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/error_console/ec2.png?updatedAt=1773049426299',
+      ],
+      'Run terminal action': [
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/run_in_terminal/t1.png?updatedAt=1773049426731',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/run_in_terminal/t2.png?updatedAt=1773049426672',
+      ],
+      'Reasoning Effort and Content': 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/reasoning_effort/re.png?updatedAt=1773049424792',
+      'Genie Web Search': [
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/web_search/wsoff.png?updatedAt=1773049424838',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/web_search/ws.png?updatedAt=1773049424822',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/web_search/ws2.png?updatedAt=1773049425609',
+      ],
+      'Genie Vision':[
+'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/Screenshot%202026-03-09%20at%2010.29.09.png?updatedAt=1773049424628',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/gvmodepopup.png?updatedAt=1773049424955',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/gvgenieselected.png?updatedAt=1773049425334',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/Screenshot%202026-03-09%20at%2010.29.32.png?updatedAt=1773049424814',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/gvBrowserXExtensionX.png?updatedAt=1773049425780',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/gv@TabPressed.png?updatedAt=1773049425778',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/gvChipAdded.png?updatedAt=1773049426039',
+        'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/genie-vision/gvchipthumbnail.png?updatedAt=1773049426150',
+      ]
+
+
+    },
+    'visualstudio': {},
+  };
+
+  dynamic _getVersion2ImagePath(String ide, String section) {
+    return version2ImagesByIde[ide]?[section] ?? [];
+  }
+
+  dynamic getVSCodeImagePath(String section, {int version = 1}) {
+    if (version == 2) {
+      return _getVersion2ImagePath('vscode', section);
+    }
+
     switch (section) {
       case 'Extension/Plugin View':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/extension_vscode.png?updatedAt=1760551402378';
@@ -86,7 +155,11 @@ class ImagesListHelper {
     }
   }
 
-  dynamic getIntelliJImagePath(String section) {
+  dynamic getIntelliJImagePath(String section, {int version = 1}) {
+    if (version == 2) {
+      return _getVersion2ImagePath('intellij', section);
+    }
+
     switch (section) {
       case 'Extension/Plugin View':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/extension_intellij.png?updatedAt=1760551402199';
@@ -179,7 +252,11 @@ class ImagesListHelper {
     }
   }
 
-  dynamic getVisualStudioImagePath(String section) {
+  dynamic getVisualStudioImagePath(String section, {int version = 1}) {
+    if (version == 2) {
+      return _getVersion2ImagePath('visualstudio', section);
+    }
+
     switch (section) {
       case 'Extension/Plugin View':
         return 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/Extension%20Plugin%20View_VISUAL_STUDIO.png?updatedAt=1761061061066';

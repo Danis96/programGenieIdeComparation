@@ -6,7 +6,12 @@ class ImageSlider extends StatefulWidget {
   final String title;
   final Color borderColor;
 
-  const ImageSlider({Key? key, required this.imagePaths, required this.title, required this.borderColor}) : super(key: key);
+  const ImageSlider({
+    super.key,
+    required this.imagePaths,
+    required this.title,
+    required this.borderColor,
+  });
 
   @override
   State<ImageSlider> createState() => _ImageSliderState();
@@ -24,12 +29,22 @@ class _ImageSliderState extends State<ImageSlider> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    final ColorScheme scheme = theme.colorScheme;
+    final bool isDark = theme.brightness == Brightness.dark;
+    final Color overlayBackground = isDark
+        ? scheme.surfaceContainerHighest.withValues(alpha: 0.9)
+        : scheme.scrim.withValues(alpha: 0.58);
+    final Color overlayForeground = isDark
+        ? scheme.onSurface
+        : scheme.onPrimary;
+
     return Container(
       height: 300,
       decoration: BoxDecoration(
-        color: Colors.grey.shade100,
+        color: scheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: widget.borderColor, width: 2),
+        border: Border.all(color: widget.borderColor, width: 1.5),
       ),
       child: Stack(
         children: [
@@ -43,7 +58,11 @@ class _ImageSliderState extends State<ImageSlider> {
             itemCount: widget.imagePaths.length,
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
-                onTap: () => _showExpandedImage(context, widget.imagePaths[index], '${widget.title} (${index + 1}/${widget.imagePaths.length})'),
+                onTap: () => _showExpandedImage(
+                  context,
+                  widget.imagePaths[index],
+                  '${widget.title} (${index + 1}/${widget.imagePaths.length})',
+                ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6),
                   child: CachedNetworkImage(
@@ -51,31 +70,46 @@ class _ImageSliderState extends State<ImageSlider> {
                     width: double.infinity,
                     height: double.infinity,
                     fit: BoxFit.contain,
-                    errorWidget: (BuildContext context, String error, dynamic stackTrace) {
-                      return Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.broken_image, size: 48, color: Colors.grey.shade400),
-                            const SizedBox(height: 8),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Image not found',
-                                style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
-                                textAlign: TextAlign.center,
-                              ),
+                    errorWidget:
+                        (
+                          BuildContext context,
+                          String error,
+                          dynamic stackTrace,
+                        ) {
+                          return Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.broken_image,
+                                  size: 48,
+                                  color: scheme.outlineVariant,
+                                ),
+                                const SizedBox(height: 8),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Image not found',
+                                    style: TextStyle(
+                                      color: scheme.onSurfaceVariant,
+                                      fontSize: 12,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  widget.imagePaths[index],
+                                  style: TextStyle(
+                                    color: scheme.onSurfaceVariant,
+                                    fontSize: 10,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
                             ),
-                            const SizedBox(height: 4),
-                            Text(
-                              widget.imagePaths[index],
-                              style: TextStyle(color: Colors.grey.shade500, fontSize: 10),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      );
-                    },
+                          );
+                        },
                   ),
                 ),
               );
@@ -88,12 +122,22 @@ class _ImageSliderState extends State<ImageSlider> {
               bottom: 0,
               child: Center(
                 child: Container(
-                  decoration: BoxDecoration(color: Colors.black54, borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                    color: overlayBackground,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: IconButton(
-                    icon: const Icon(Icons.chevron_left, color: Colors.white, size: 28),
+                    icon: Icon(
+                      Icons.chevron_left,
+                      color: overlayForeground,
+                      size: 28,
+                    ),
                     onPressed: _currentIndex > 0
                         ? () {
-                            _pageController.previousPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+                            _pageController.previousPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
                           }
                         : null,
                   ),
@@ -107,12 +151,22 @@ class _ImageSliderState extends State<ImageSlider> {
               bottom: 0,
               child: Center(
                 child: Container(
-                  decoration: BoxDecoration(color: Colors.black54, borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                    color: overlayBackground,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: IconButton(
-                    icon: const Icon(Icons.chevron_right, color: Colors.white, size: 28),
+                    icon: Icon(
+                      Icons.chevron_right,
+                      color: overlayForeground,
+                      size: 28,
+                    ),
                     onPressed: _currentIndex < widget.imagePaths.length - 1
                         ? () {
-                            _pageController.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+                            _pageController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
                           }
                         : null,
                   ),
@@ -126,11 +180,21 @@ class _ImageSliderState extends State<ImageSlider> {
               right: 0,
               child: Center(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(color: Colors.black54, borderRadius: BorderRadius.circular(20)),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: overlayBackground,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: Text(
                     '${_currentIndex + 1} / ${widget.imagePaths.length}',
-                    style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      color: overlayForeground,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -140,8 +204,11 @@ class _ImageSliderState extends State<ImageSlider> {
             right: 8,
             child: Container(
               padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(color: Colors.black54, borderRadius: BorderRadius.circular(20)),
-              child: const Icon(Icons.zoom_in, color: Colors.white, size: 20),
+              decoration: BoxDecoration(
+                color: overlayBackground,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Icon(Icons.zoom_in, color: overlayForeground, size: 20),
             ),
           ),
         ],
@@ -149,9 +216,25 @@ class _ImageSliderState extends State<ImageSlider> {
     );
   }
 
-  void _showExpandedImage(BuildContext context, String imagePath, String title) {
+  void _showExpandedImage(
+    BuildContext context,
+    String imagePath,
+    String title,
+  ) {
+    final ThemeData theme = Theme.of(context);
+    final ColorScheme scheme = theme.colorScheme;
+    final bool isDark = theme.brightness == Brightness.dark;
+    final Color overlayBackground = isDark
+        ? scheme.surfaceContainerHighest.withValues(alpha: 0.9)
+        : scheme.scrim.withValues(alpha: 0.72);
+    final Color overlayForeground = isDark
+        ? scheme.onSurface
+        : scheme.onPrimary;
+
     // Create a separate PageController for the expanded view
-    final PageController expandedPageController = PageController(initialPage: _currentIndex);
+    final PageController expandedPageController = PageController(
+      initialPage: _currentIndex,
+    );
     int expandedCurrentIndex = _currentIndex;
 
     showDialog(
@@ -164,23 +247,36 @@ class _ImageSliderState extends State<ImageSlider> {
               children: [
                 Center(
                   child: Container(
-                    constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.9, maxHeight: MediaQuery.of(context).size.height * 0.9),
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width * 0.9,
+                      maxHeight: MediaQuery.of(context).size.height * 0.9,
+                    ),
+                    decoration: BoxDecoration(
+                      color: scheme.surface,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: Colors.blue.shade700,
-                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+                            color: scheme.primary,
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(12),
+                              topRight: Radius.circular(12),
+                            ),
                           ),
                           child: Row(
                             children: [
                               Expanded(
                                 child: Text(
                                   '${widget.title} (${expandedCurrentIndex + 1}/${widget.imagePaths.length})',
-                                  style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                    color: scheme.onPrimary,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                               IconButton(
@@ -188,7 +284,10 @@ class _ImageSliderState extends State<ImageSlider> {
                                   expandedPageController.dispose();
                                   Navigator.pop(context);
                                 },
-                                icon: const Icon(Icons.close, color: Colors.white),
+                                icon: Icon(
+                                  Icons.close,
+                                  color: scheme.onPrimary,
+                                ),
                               ),
                             ],
                           ),
@@ -217,18 +316,35 @@ class _ImageSliderState extends State<ImageSlider> {
                                     child: CachedNetworkImage(
                                       imageUrl: widget.imagePaths[index],
                                       fit: BoxFit.contain,
-                                      errorWidget: (BuildContext context, String url, Object error) {
-                                        return Center(
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              Icon(Icons.image_not_supported, size: 64, color: Colors.grey.shade400),
-                                              const SizedBox(height: 16),
-                                              Text(widget.imagePaths[index], style: TextStyle(color: Colors.grey.shade600)),
-                                            ],
-                                          ),
-                                        );
-                                      },
+                                      errorWidget:
+                                          (
+                                            BuildContext context,
+                                            String url,
+                                            Object error,
+                                          ) {
+                                            return Center(
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.image_not_supported,
+                                                    size: 64,
+                                                    color:
+                                                        scheme.outlineVariant,
+                                                  ),
+                                                  const SizedBox(height: 16),
+                                                  Text(
+                                                    widget.imagePaths[index],
+                                                    style: TextStyle(
+                                                      color: scheme
+                                                          .onSurfaceVariant,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            );
+                                          },
                                     ),
                                   );
                                 },
@@ -241,15 +357,33 @@ class _ImageSliderState extends State<ImageSlider> {
                                   child: Center(
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Colors.black87,
+                                        color: overlayBackground,
                                         borderRadius: BorderRadius.circular(30),
-                                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 2))],
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: scheme.shadow.withValues(
+                                              alpha: 0.25,
+                                            ),
+                                            blurRadius: 8,
+                                            offset: const Offset(0, 2),
+                                          ),
+                                        ],
                                       ),
                                       child: IconButton(
-                                        icon: const Icon(Icons.chevron_left, color: Colors.white, size: 36),
+                                        icon: Icon(
+                                          Icons.chevron_left,
+                                          color: overlayForeground,
+                                          size: 36,
+                                        ),
                                         onPressed: expandedCurrentIndex > 0
                                             ? () {
-                                                expandedPageController.previousPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+                                                expandedPageController
+                                                    .previousPage(
+                                                      duration: const Duration(
+                                                        milliseconds: 300,
+                                                      ),
+                                                      curve: Curves.easeInOut,
+                                                    );
                                               }
                                             : null,
                                       ),
@@ -264,15 +398,34 @@ class _ImageSliderState extends State<ImageSlider> {
                                   child: Center(
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Colors.black87,
+                                        color: overlayBackground,
                                         borderRadius: BorderRadius.circular(30),
-                                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 2))],
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: scheme.shadow.withValues(
+                                              alpha: 0.25,
+                                            ),
+                                            blurRadius: 8,
+                                            offset: const Offset(0, 2),
+                                          ),
+                                        ],
                                       ),
                                       child: IconButton(
-                                        icon: const Icon(Icons.chevron_right, color: Colors.white, size: 36),
-                                        onPressed: expandedCurrentIndex < widget.imagePaths.length - 1
+                                        icon: Icon(
+                                          Icons.chevron_right,
+                                          color: overlayForeground,
+                                          size: 36,
+                                        ),
+                                        onPressed:
+                                            expandedCurrentIndex <
+                                                widget.imagePaths.length - 1
                                             ? () {
-                                                expandedPageController.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+                                                expandedPageController.nextPage(
+                                                  duration: const Duration(
+                                                    milliseconds: 300,
+                                                  ),
+                                                  curve: Curves.easeInOut,
+                                                );
                                               }
                                             : null,
                                       ),
@@ -286,15 +439,30 @@ class _ImageSliderState extends State<ImageSlider> {
                                   right: 0,
                                   child: Center(
                                     child: Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16,
+                                        vertical: 8,
+                                      ),
                                       decoration: BoxDecoration(
-                                        color: Colors.black87,
+                                        color: overlayBackground,
                                         borderRadius: BorderRadius.circular(25),
-                                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 2))],
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: scheme.shadow.withValues(
+                                              alpha: 0.25,
+                                            ),
+                                            blurRadius: 8,
+                                            offset: const Offset(0, 2),
+                                          ),
+                                        ],
                                       ),
                                       child: Text(
                                         '${expandedCurrentIndex + 1} / ${widget.imagePaths.length}',
-                                        style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                                        style: TextStyle(
+                                          color: overlayForeground,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                   ),
