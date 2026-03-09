@@ -38,7 +38,8 @@ class ImagesListHelper {
         'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/run_in_terminal/t1.png?updatedAt=1773049426731',
         'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/run_in_terminal/t2.png?updatedAt=1773049426672',
       ],
-      'Reasoning Effort and Content': 'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/reasoning_effort/re.png?updatedAt=1773049424792',
+      'Reasoning Effort and Content': ['https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/reasoning_effort/re.png?updatedAt=1773049424792',
+      'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/reasoning_effort/re2.png'],
       'Genie Web Search': [
         'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/web_search/wsoff.png?updatedAt=1773049424838',
         'https://ik.imagekit.io/9j9bfa4c7h/programGenie/version2/intellij/web_search/ws.png?updatedAt=1773049424822',
