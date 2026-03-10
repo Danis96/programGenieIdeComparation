@@ -33,6 +33,7 @@ class SectionListHelper {
     if (version == 2) {
       return v2Sections;
     }
+
     return v1Sections;
   }
 }
