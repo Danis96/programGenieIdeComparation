@@ -58,6 +58,8 @@ class DifferencesListHelper {
       return version2Differences[section] ??
           'No Version 2 data yet for this section.';
     }
+
+
     return prewrittenDifferences[section] ?? '';
   }
 }
